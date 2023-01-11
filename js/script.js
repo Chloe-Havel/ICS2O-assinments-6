@@ -20,8 +20,8 @@ const quote = async (URLAddress) => {
     const result = await fetch(URLAddress)
     const data = await result.json()
     console.log(data)
-    document.getElementById("quote").innerHTML =
-      '<h4> anime: ' + data.anime + '</h4> <br> <h4> " ' + data.quote + ' " </h4> <br> <h4> - ' + data.character + '</h4>'
+    document.getElementById("dog").innerHTML =
+    '<h4> dogs:0: </h4> <img src="  ' + data.message + '" alt="dog" '
   } catch (error) {
     console.log(error)
   }
