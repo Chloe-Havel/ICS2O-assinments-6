@@ -10,14 +10,24 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test-1/sw.js", {
-    scope: "/ICS2O-PWA-Test-1/",
+  navigator.serviceWorker.register("/ICS2O-assignement-6/sw.js", {
+    scope: "/ICS2O-assignement-6/",
   })
 }
 
-/**
- * This function displays an alert.
- */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+const quote = async (URLAddress) => {
+  try {
+    const result = await fetch(URLAddress)
+    const data = await result.json()
+    console.log(data)
+    document.getElementById("quote").innerHTML =
+      '<h4> anime: ' + data.anime + '</h4> <br> <h4> " ' + data.quote + ' " </h4> <br> <h4> - ' + data.character + '</h4>'
+  } catch (error) {
+    console.log(error)
+  }
 }
+
+quote(
+  "https://dog.ceo/api/breeds/image/random"
+)
+
