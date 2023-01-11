@@ -21,7 +21,7 @@ const quote = async (URLAddress) => {
     const data = await result.json()
     console.log(data)
     document.getElementById("dog").innerHTML =
-    '<h4> dogs:0: </h4> <img src="  ' + data.message + '" alt="dog" '
+    '<h4> dogs:0: </h4> <img src="' + data.message + '" alt="dog" />'
   } catch (error) {
     console.log(error)
   }
